@@ -12,7 +12,7 @@ import { IProps, IInputs } from '@/entities/dialogs/interfaces';
 import { IMessage } from '@/entities/dialogs/ts';
 
 const DialogsWithoutMemo: FC<IProps> = memo((currentChat: IProps): JSX.Element => {
-  const [dialogs, setDialogs] = useState<any>([]);//IMessage[]
+  const [dialogs, setDialogs] = useState<IMessage[]>([]);
   const { register, handleSubmit, reset } = useForm<IInputs>();
 
   const onSubmit: SubmitHandler<any> = async (data: IInputs) => {
