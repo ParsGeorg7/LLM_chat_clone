@@ -1,16 +1,17 @@
 import { nanoid } from 'nanoid';
 
 import { getMockData } from '@/app/api/chat';
+import { IChartData } from '@/entities/dialogs/ts/interfaces';
 
 export const createChatResponce = (content: string) => {
-  let resObj: any =  {}, resAr: any = []
+  let resObj: IChartData =  {}, resAr: IChartData[] = []
 
   content.split(' ').forEach(item => {
     if(item && isNaN(Number(item))) {
       resObj.name = item
     }
     else {
-      resObj.uv = item
+      resObj.uv = +item
       resAr = [...resAr, resObj]
       resObj = {}
     }

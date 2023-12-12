@@ -1,6 +1,6 @@
 export interface IChartData {
-  name: string;
-  uv: number;
+  name?: string;
+  uv?: number;
 }
 
 export interface IMessage {

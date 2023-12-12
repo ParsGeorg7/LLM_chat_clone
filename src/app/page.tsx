@@ -1,7 +1,7 @@
+import { FC } from 'react';
+
 import { MainPage } from '@/chat-pages';
 
-const Main = () => {
-  return <MainPage />;
-};
+const Main: FC = (): JSX.Element => <MainPage />;
 
 export default Main;

@@ -7,8 +7,9 @@ import { nanoid } from 'nanoid';
 import { Logo } from '@/shared/ui';
 import { Message } from '@/entities';
 import { LOCALE } from '@/app/locale';
-import { IProps, IInputs } from '@/entities/dialogs/interfaces';
 import { sendMessage } from '@/entities/dialogs/api/chatApi';
+import { IProps, IInputs } from '@/entities/dialogs/interfaces';
+import { IMessage } from '@/entities/dialogs/ts';
 
 const DialogsWithoutMemo: FC<IProps> = memo((currentChat: IProps): JSX.Element => {
   const [dialogs, setDialogs] = useState<any>([]);//IMessage[]
@@ -40,13 +41,13 @@ const DialogsWithoutMemo: FC<IProps> = memo((currentChat: IProps): JSX.Element =
   return (
     <main className='flex flex-col justify-between h-full w-full mr-30 rounded-xl bg-purple-100 p-5'>
       <div className='h-5/6'>
-        {dialogs.length === 0 ? (
+        {!dialogs.length ? (
           <h2 className='mx-auto w-fit text-xl font-bold'>
-            {LOCALE.chatMessageTitle}
+            {LOCALE.dialogsTitle}
           </h2>
         ) : (
           <div className='flex max-h-[95%] flex-col gap-5 overflow-x-clip overflow-y-scroll'>
-            {dialogs.map((item: any, index: number) => (
+            {dialogs.map((item: IMessage, index: number) => (
               <Message key={index.toString() + item.id} item={item} />
             ))}
           </div>
