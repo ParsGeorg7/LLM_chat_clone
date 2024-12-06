@@ -1,7 +1,7 @@
 FROM node:latest
 WORKDIR /app
 
-COPY . ./
+COPY package.json package-lock.json ./
 
 # building the app
 RUN npm i
