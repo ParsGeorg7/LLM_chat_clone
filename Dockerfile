@@ -1,6 +1,11 @@
 FROM node:latest
 WORKDIR /app
-COPY package.json ./
-RUN npm install
-COPY . .
-CMD ["npm", "build", "start"]
+
+COPY . ./
+
+# building the app
+RUN npm i
+RUN npm run build
+
+# Running the app
+CMD [ "npm", "start" ]
