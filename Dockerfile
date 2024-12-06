@@ -5,7 +5,7 @@ COPY . ./
 
 # building the app
 RUN npm i
-RUN npm run build
+#RUN npm run build
 
 # Running the app
 CMD [ "npm", "start" ]
