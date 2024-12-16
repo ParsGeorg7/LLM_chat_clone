@@ -71,4 +71,6 @@ const DialogsWithoutMemo: FC<IProps> = memo((currentChat: IProps): JSX.Element =
   );
 });
 
+DialogsWithoutMemo.displayName = 'DialogsWithoutMemo';
+
 export const Dialogs = memo(DialogsWithoutMemo);
