@@ -9,9 +9,9 @@ import styles from './Tools.module.css';
 import { Settings } from '@/features/settings/ui/Settings';
 
 export const Tools: FC = (): JSX.Element => {
-  const [showSettingsModal, setShowSettingsModal] = useState(false);
+  const [isShowSettingsModal, setIsShowSettingsModal] = useState(false);
 
-  const modalToggleHandler = () => setShowSettingsModal((prevState) => !prevState);
+  const modalToggleHandler = () => setIsShowSettingsModal((prevState) => !prevState);
 
   const onSettingsClick = () => modalToggleHandler();
 
@@ -29,7 +29,7 @@ export const Tools: FC = (): JSX.Element => {
         data-tooltip-content='Settings'
         data-tooltip-place='bottom'
       >
-        <Settings open={showSettingsModal} onClose={modalToggleHandler} />
+        <Settings open={isShowSettingsModal} onClose={modalToggleHandler} />
         <Tooltip id='settings' />
         <div onClick={onSettingsClick}>
           <SettingsIcon />
