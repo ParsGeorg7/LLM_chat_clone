@@ -8,7 +8,12 @@ import { SettingsModal } from '@/entities';
 
 import styles from './Settings.module.css';
 
-export const Settings: FC = (): JSX.Element => {
+interface IProps {
+  open?: boolean;
+  onClose?: () => any;
+}
+
+export const Settings: FC<IProps> = (): JSX.Element => {
   const [showSettingsModal, setShowSettingsModal] = useState(false);
 
   const onSettingsClick = () => modalToggle();
